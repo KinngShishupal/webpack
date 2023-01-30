@@ -6,6 +6,9 @@ module.exports = {
     filename: "bundle.js", // this generates bundle.js file in dist folder
     // path: "./dist", this will not work as absolute path is required not relative path
     path: path.resolve(__dirname, "./dist"),
+    // publicPath: "dist/", // it will for static assests in dist folder, this case is bydefault hanlded by webpack 5, no need to specifically mention here
+    // publicPath: "https://picsum.photos/200/300", it will look for images at this location
+    public: "dist/",
   },
 
   mode: "none",
