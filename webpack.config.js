@@ -18,12 +18,19 @@ module.exports = {
       {
         test: /\.(png|jpg)$/, // regular expression that checks if filename contains png or jpg
         // for loaders we have use and for assets we have type, type can be one of four values
-        //    1. asset/resource
-        //    2. asset/inline
-        //    3.asset
+        //    1. asset/resource: creates a separate file for each assests and exports the url of each file, used for importing large files
+        //    2. asset/inline: injects the base64 format of assest directly into the bundle, used for importing small files
+        //    3. asset: combination of above two
         //    4.asset/source
 
-        type: "asset/resource",
+        // type: "asset/resource", preferred for big files, size>8kb
+        // type: "asset/inline", // preferred for small files like svg size <8kb, it creates the base 64 format of the file and inject it directly into the output budle therby increasing its size
+        type: "asset", // webpack will decide what to apply between above two based upon the file size
+        parser: {
+          dataUrlCondition: {
+            maxSize: 3 * 1024, // changed the webpack default 8kb check for small and large files to 3 kb
+          },
+        },
       },
     ],
   },
