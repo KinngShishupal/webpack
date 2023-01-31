@@ -32,6 +32,12 @@ module.exports = {
           },
         },
       },
+
+      {
+        // rule for text files
+        test: /\.txt/,
+        type: "asset/source",
+      },
     ],
   },
 };
