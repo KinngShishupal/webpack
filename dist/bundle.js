@@ -105,7 +105,7 @@ module.exports = __webpack_require__.p + "57de3c907061e12deafd.jpg";
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
-/******/ 		__webpack_require__.p = "https://picsum.photos/200/300";
+/******/ 		__webpack_require__.p = "dist/";
 /******/ 	})();
 /******/ 	
 /************************************************************************/

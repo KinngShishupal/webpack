@@ -7,8 +7,8 @@ module.exports = {
     // path: "./dist", this will not work as absolute path is required not relative path
     path: path.resolve(__dirname, "./dist"),
     // publicPath: "dist/", // it will for static assests in dist folder, this case is bydefault hanlded by webpack 5, no need to specifically mention here
-    // publicPath: "https://picsum.photos/200/300", it will look for images at this location
-    public: "dist/",
+    // publicPath: "https://some-cdn.com", it will look for images at this location
+    publicPath: "dist/", // it tells from where the assests should be taken from, in webpack 5 it is by default set to publicPath: "auto"
   },
 
   mode: "none",
